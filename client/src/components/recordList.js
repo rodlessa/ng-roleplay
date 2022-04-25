@@ -18,7 +18,8 @@ const Record = (props) => (
 
    
    <td className="col-md-2">
-     <Link className="btn btn-link" to={`/edit/${props.record._id}`}>Edit</Link> |
+    
+      {/* <Link className="btn btn-link" to={`/edit/${props.record._id}`}>Edit</Link> */}
      <Link className="btn btn-link" to={`/view/${props.record._id}`}>View</Link>
      <button className="btn btn-link"
        onClick={() => {
