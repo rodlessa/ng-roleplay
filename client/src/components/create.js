@@ -46,7 +46,7 @@ export default function Create() {
  // This following section will display the form that takes the input from the user.
  return (
  
-    <div className="container spacer">
+    <div className="container p-5">
     <h3>New Class</h3>
     <form onSubmit={onSubmit}>
 
