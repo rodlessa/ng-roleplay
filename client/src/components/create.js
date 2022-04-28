@@ -25,7 +25,7 @@ export default function Create() {
    // When a post request is sent to the create url, we'll add a new record to the database.
    const newPerson = { ...form };
  
-   await fetch("http://localhost:5000/record/add", {
+   await fetch("http://54.167.59.252:5000/record/add", {
      method: "POST",
      headers: {
        "Content-Type": "application/json",
@@ -42,9 +42,9 @@ export default function Create() {
 });
    navigate("/");
  }
- 
- // This following section will display the form that takes the input from the user.
- return (
+  const classList = ['Hero','Bandit','Astrologer','Warrior','Prisioner','Confessor','Wretch','Vagabond','Prophet','Samurai'].sort();
+  
+  return (
  
     <div className="container p-5">
     <h3>New Class</h3>
@@ -69,20 +69,12 @@ export default function Create() {
           id="position"
           value={form.position}
           onChange={(e) => updateForm({ position: e.target.value })}
-        ><option>Hero</option>
-        <option>Bandit</option>
-        <option>Astrologer</option>
-        <option>Warrior</option>
-        <option>Prisioner</option>
-        <option>Confessor</option>
-        <option>Wretch</option>
-        <option>Vagabon</option>
-        <option>Prophet</option>
-        <option>Samurai</option>
+        >{classList.map((classes) => (
+          <option textAlign="center">{classes}</option>
+          
+        ))}
         </select>
       </div>
-      </div>
-      <div className="row">
       <div className="form-group col-sm">
         <label htmlFor="level">Min. Level</label>
         <input
@@ -93,6 +85,9 @@ export default function Create() {
           onChange={(e) => updateForm({ level: e.target.value })}
         />
       </div>
+      </div>
+      <div className="row">
+      <div className="col-md-3">
       <div className="form-group col-sm">
         <label htmlFor="vigor">Vigor</label>
         <input
@@ -112,7 +107,8 @@ export default function Create() {
           value={form.mind}
           onChange={(e) => updateForm({ mind: e.target.value })}
         />
-      </div>
+      </div></div>
+      <div className="col-md-3">
       <div className="form-group col-sm">
         <label htmlFor="endurance">Endurance</label>
         <input
@@ -132,7 +128,8 @@ export default function Create() {
           value={form.str}
           onChange={(e) => updateForm({ str: e.target.value })}
         />
-      </div>
+      </div></div>
+      <div className="col-md-3">
       <div className="form-group col-sm">
         <label htmlFor="dex">DEX</label>
         <input
@@ -153,6 +150,8 @@ export default function Create() {
           onChange={(e) => updateForm({ intelligence: e.target.value })}
         />
       </div>
+      </div>
+      <div className="col-md-3">
       <div className="form-group col-sm">
         <label htmlFor="faith">Faith</label>
         <input
@@ -173,8 +172,8 @@ export default function Create() {
           onChange={(e) => updateForm({ arcane: e.target.value })}
         />
       </div>
-      <div className="row">
-      <div className="form-group col-sm">
+      </div>
+      <div className="form-group col-md-6">
          <label htmlFor="weaponr1">Weapon R1</label>
          <input
            type="text"
@@ -184,7 +183,7 @@ export default function Create() {
            onChange={(e) => updateForm({ weaponr1: e.target.value })}
          />
        </div> 
-       <div className="form-group col-sm">
+       <div className="form-group col-md-6">
          <label htmlFor="weaponl1">Weapon L1</label>
          <input
            type="text"
@@ -193,9 +192,8 @@ export default function Create() {
            value={form.weaponl1}
            onChange={(e) => updateForm({ weaponl1: e.target.value })}
          />
-       </div> </div>
-       <div className="row">
-      <div className="form-group col-sm">
+       </div>
+      <div className="form-group col-md-6">
          <label htmlFor="weaponr2">Weapon R2</label>
          <input
            type="text"
@@ -205,7 +203,7 @@ export default function Create() {
            onChange={(e) => updateForm({ weaponr2: e.target.value })}
          />
        </div> 
-       <div className="form-group col-sm">
+       <div className="form-group col-md-6">
          <label htmlFor="weaponl2">Weapon L2</label>
          <input
            type="text"
@@ -214,10 +212,9 @@ export default function Create() {
            value={form.weaponl2}
            onChange={(e) => updateForm({ weaponl2: e.target.value })}
          />
-       </div></div>
-
-       <div className="row">
-      <div className="form-group col-sm">
+       </div>
+          
+      <div className="form-group col-md-6">
          <label htmlFor="talisman1">Talisman 1</label>
          <input
            type="text"
@@ -227,7 +224,7 @@ export default function Create() {
            onChange={(e) => updateForm({ talisman1: e.target.value })}
          />
        </div> 
-       <div className="form-group col-sm">
+       <div className="form-group col-md-6">
          <label htmlFor="talisman2">Talisman 2</label>
          <input
            type="text"
@@ -236,9 +233,8 @@ export default function Create() {
            value={form.talisman2}
            onChange={(e) => updateForm({ talisman2: e.target.value })}
          />
-       </div> </div>
-       <div className="row">
-      <div className="form-group col-sm">
+       </div> 
+      <div className="form-group col-md-6">
          <label htmlFor="talisman3">Talisman 3</label>
          <input
            type="text"
@@ -248,7 +244,7 @@ export default function Create() {
            onChange={(e) => updateForm({ talisman3: e.target.value })}
          />
        </div> 
-       <div className="form-group col-sm">
+       <div className="form-group col-md-6">
          <label htmlFor="talisman4">Talisman 4</label>
          <input
            type="text"
@@ -257,7 +253,7 @@ export default function Create() {
            value={form.talisman4}
            onChange={(e) => updateForm({ talisman4: e.target.value })}
          />
-       </div></div>
+       </div>
        <div className="form-group col-sm">
          <label htmlFor="armor">Armor</label>
          <input

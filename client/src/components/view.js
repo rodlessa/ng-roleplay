@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router";
  
@@ -77,13 +78,15 @@ export default function View() {
  
  // This following section will display the form that takes input from the user to update the data.
  return (
+   	
+
    <div className="container p-5">
      <h3>{form.name}</h3>
      <form onSubmit={onSubmit}>
      <div className="flexbox">
      <div className="row ">
        <div className="form-group col-sm p-5">
-       <img src={form.refImg} alt={form.refImg} /> 
+       <img src={form.refImg} alt={form.refImg} className="img-viewer"/> 
        <label htmlFor="position"><b>Start Class</b></label>
        <p>{form.position}</p>
        </div>

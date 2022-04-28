@@ -3,18 +3,11 @@ import { Link } from "react-router-dom";
  
 const Record = (props) => (
  <tr>
-   <td><img className="img-thumbnail w-30" alt={props.record.name} src={props.record.refImg}></img></td>
+   <td><img className="img-thumbnail w-30 img-table" alt={props.record.name} src={props.record.refImg}></img></td>
    <td>{props.record.name}</td>
    <td>{props.record.position}</td>
    <td>{props.record.level}</td>
-   <td >VIG:{props.record.vigor}</td> 
-   <td >MIND:{props.record.mind}</td> 
-   <td >END:{props.record.endurance}</td> 
-   <td >STR:{props.record.str}</td> 
-   <td >DEX:{props.record.dex}</td>
-   <td >INT:{props.record.intelligence}</td> 
-   <td >FAI:{props.record.faith}</td> 
-   <td >ARC:{props.record.arcane}</td>
+
 
    
    <td className="col-md-2">
@@ -87,20 +80,12 @@ export default function RecordList() {
  return (
    <div className="container p-2 ">
      <table className="table" style={{ marginTop: 10 }}>
-       <thead className="thead-dark">
+       <thead className="thead-light">
          <tr>
-           <th>Image</th>
+           <th className="col-md-3 ">Image</th>
            <th>Name</th>
            <th>Start Class</th>
            <th>Min. Level</th>
-           <th>Stats</th>
-           <th></th>
-           <th></th>
-           <th></th>
-           <th></th>
-           <th></th>
-           <th></th>
-           <th></th>
            <th>Action</th>
          </tr>
        </thead>

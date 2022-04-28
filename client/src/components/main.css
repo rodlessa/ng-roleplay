@@ -12,19 +12,37 @@ td{
     color: rgb(219, 219, 219);
 }
 a{
+    text-decoration: none;
   color:  rgb(219, 219, 219)
 }
 .link{
+    text-decoration: none;
     color:  rgb(219, 219, 219)
 }
 .link-unstyled, .link-unstyled:link, .link-unstyled:hover {
     color: inherit;
-    text-decoration: inherit;
+    text-decoration: none;
   }
-  img {
-    max-width: 70vh;
+  .img-table {
+    max-width: 50vh;
+    max-height: 30vh;
+    height: auto;
+  }
+  .img-viewer{
+    max-width: 80vh;
+    max-height: 60vh;
     height: auto;
   }
   .flexbox{
       display: flex;
   }
+  .topnav-right {
+    float: right;
+  }
+  row-rev {
+    flex-direction: row-reverse;
+  }
+  .text-link {
+    color: inherit;
+    text-decoration: inherit;
+}
