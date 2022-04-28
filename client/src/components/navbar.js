@@ -16,7 +16,7 @@ const pages = [
 export default function ButtonAppBar() {
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
+      <AppBar position="static" style={{bgcolor:'black'}}>
         <Toolbar>
           <IconButton
             size="large"
